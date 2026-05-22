@@ -1,52 +1,70 @@
-<!DOCTYPE html><html lang="fr">
+<!DOCTYPE html>
+<html lang="ht">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mon Site Web</title>
+  <meta charset="UTF-8">
+  <title>Rechèch ak Lyen Defi</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
+      margin: 20px;
+    }
+    #searchBar {
+      padding: 10px;
+      width: 250px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    ul {
+      list-style-type: none; /* Retire pwen yo devan lis la */
       padding: 0;
-      background: linear-gradient(120deg, #4facfe, #00f2fe);
-      color: #fff;
-      text-align: center;
     }
-    header {
-      padding: 50px 20px;
+    li {
+      margin: 8px 0;
     }
-    h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 18px;
-      opacity: 0.9;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #fff;
-      color: #333;
-      border-radius: 25px;
+    a {
       text-decoration: none;
-      font-weight: bold;
+      color: #0066cc;
+      font-size: 18px;
     }
-    footer {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      font-size: 14px;
-      opacity: 0.8;
+    a:hover {
+      text-decoration: underline; /* Mete yon liy anba non an lè sourit la pase sou li */
+      color: #003366;
     }
   </style>
 </head>
-<body>  <header>
-    <h1>Byenveni sou EROBLACK</h1>
-    <p>Eroblack se lavi</p>
-    <a class="btn" href="#">Klike la</a>
-  </header>  <footer>
-    © 2026 -EROBLACK 4066-8847
-  </footer></body>
+<body>
+
+  <h2>Klike sou yon non pou louvri Defi a</h2>
+
+  <!-- Zòn rechèch la -->
+  <input type="text" id="searchBar" onkeyup="filtreNon()" placeholder="Chache yon non...">
+
+  <!-- Lis non yo ak lyen espesifik ou a -->
+  <ul id="lisMoun">
+    <li><a href="https://eroblack.github.io/Challenge/" target="_blank">Jean Dupont</a></li>
+    <li><a href="https://eroblack.github.io/Challenge/" target="_blank">Marie Claire Augustin</a></li>
+    <li><a href="https://eroblack.github.io/Challenge/" target="_blank">Pierre Noel</a></li>
+    <li><a href="https://eroblack.github.io/Challenge/" target="_blank">Florence Joseph</a></li>
+    <li><a href="https://eroblack.github.io/Challenge/" target="_blank">Frantz Pascal</a></li>
+  </ul>
+
+  <!-- Kòd JavaScript pou filtre rechèch la -->
+  <script>
+    function filtreNon() {
+      let input = document.getElementById('searchBar').value.toLowerCase();
+      let ul = document.getElementById('lisMoun');
+      let li = ul.getElementsByTagName('li');
+
+      for (let i = 0; i < li.length; i++) {
+        let non = li[i].textContent || li[i].innerText;
+        if (non.toLowerCase().indexOf(input) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+
+</body>
 </html>
