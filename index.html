@@ -2,51 +2,115 @@
 <html lang="ht">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rechèch ak Lyen Defi</title>
   <style>
+    /* Stil jeneral pou background paj la */
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    #searchBar {
-      padding: 10px;
-      width: 250px;
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
-    ul {
-      list-style-type: none; /* Retire pwen yo devan lis la */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      margin: 0;
       padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
+
+    /* Bwat prensipal la ki santre */
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    /* Tit la */
+    h2 {
+      color: #333333;
+      font-size: 22px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    /* Zòn rechèch la */
+    #searchBar {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      outline: none;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    /* Lè ou klike nan bwat rechèch la */
+    #searchBar:focus {
+      border-color: #4a90e2;
+      box-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
+    }
+
+    /* Lis non yo */
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
     li {
-      margin: 8px 0;
+      margin-bottom: 12px;
     }
+
+    /* Stil pou lyen yo (yo sanble ak bèl bouton) */
     a {
+      display: block;
       text-decoration: none;
-      color: #0066cc;
-      font-size: 18px;
+      color: #4a90e2;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 12px;
+      background-color: #f8fafc;
+      border: 1px solid #edf2f7;
+      border-radius: 8px;
+      transition: all 0.2s ease;
     }
+
+    /* Lè sourit la pase sou yon non */
     a:hover {
-      text-decoration: underline; /* Mete yon liy anba non an lè sourit la pase sou li */
-      color: #003366;
+      background-color: #4a90e2;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+    }
+
+    /* Lè ou klike sou li (active) */
+    a:active {
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
 
-  <h2>Klike sou yon non pou louvri Defi a</h2>
+  <div class="container">
+    <h2>Lis Manm Defi</h2>
 
-  <!-- Zòn rechèch la -->
-  <input type="text" id="searchBar" onkeyup="filtreNon()" placeholder="Chache yon non...">
+    <!-- Zòn rechèch la -->
+    <input type="text" id="searchBar" onkeyup="filtreNon()" placeholder="🔍 Chache yon non...">
 
-  <!-- Lis non yo ak lyen espesifik ou a -->
-  <ul id="lisMoun">
-    <li><a href="https://eroblack.github.io/Challenge/" target="_blank">Jean Dupont</a></li>
-    <li><a href="https://eroblack.github.io/Challenge/" target="_blank">Marie Claire Augustin</a></li>
-    <li><a href="https://eroblack.github.io/Challenge/" target="_blank">Pierre Noel</a></li>
-    <li><a href="https://eroblack.github.io/Challenge/" target="_blank">Florence Joseph</a></li>
-    <li><a href="https://eroblack.github.io/Challenge/" target="_blank">Frantz Pascal</a></li>
-  </ul>
+    <!-- Lis non yo ak lyen espesifik ou a -->
+    <ul id="lisMoun">
+      <li><a href="https://eroblack.github.io/Challenge/" target="_blank">Jean Dupont</a></li>
+      <li><a href="https://eroblack.github.io/Challenge/" target="_blank">Marie Claire Augustin</a></li>
+      <li><a href="https://eroblack.github.io/Challenge/" target="_blank">Pierre Noel</a></li>
+      <li><a href="https://eroblack.github.io/Challenge/" target="_blank">Florence Joseph</a></li>
+      <li><a href="https://eroblack.github.io/Challenge/" target="_blank">Frantz Pascal</a></li>
+    </ul>
+  </div>
 
   <!-- Kòd JavaScript pou filtre rechèch la -->
   <script>
